@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="max-width">
+            <h1>Leaderboard</h1>
+            <div id="container">
+                <div class="count-column">
+                    <h2>Janice</h2>
+                    <h2 id="count-janice">0</h2>
+                    <button id="increment-btn" type="button" onclick="incrementJanice()">INCREMENT</button>
+                    <button id="save-btn" type="button" onclick="saveJanice()">SAVE</button>
+                    <p id="save-janice" class="wrap">Previous entries: </p>
+                </div>
+        
+                <div class="count-column">
+                    <h2>Mosquitoes</h2>
+                    <h2 id="count-mosquito">0</h2>
+                    <button id="increment-btn" type="button" onclick="incrementMosquito()">INCREMENT</button>
+                    <button id="save-btn" type="button" onclick="saveMosquito()">SAVE</button>
+                    <p id="save-mosquito" class="wrap">Previous entries: </p>
+                </div>
+                <script src="index.js"></script>
+            </div><!--container -->
+        </div>
+    </body>
+
+</html>
