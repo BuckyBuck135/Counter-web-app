@@ -1,31 +1,40 @@
+const actions = Array.from(document.querySelectorAll('[data-action]'));
 
+let counterJanice = localStorage.getItem('counterJanice') || 0
+let counterMosquito = localStorage.getItem('counterMosquito') || 0
 
-let countElJanice = document.getElementById("count-janice")
-let countJanice = 0
-function incrementJanice() {
-    countJanice++
-    countElJanice.textContent = countJanice
-}
+document.getElementById("counter-janice").textContent = counterJanice
+document.getElementById("counter-mosquito").textContent = counterMosquito
 
-let countElMosquito = document.getElementById("count-mosquito")
-let countMosquito = 0
-function incrementMosquito() {
-    countMosquito++
-    countElMosquito.textContent = countMosquito
-}
+actions.forEach(action => {
+    action.addEventListener('click', () => {
+        const type = action.dataset.action;
 
-let saveElJanice = document.getElementById("save-janice")
-function saveJanice(){
-    let countJaniceStr = countJanice + " - "
-    saveElJanice.textContent += countJaniceStr
-    countJanice = 0
-    countElJanice.textContent = 0
-}
+        switch (type) {
+            case 'increase-janice':
+                counterJanice++;
+                break;
+            case 'increase-mosquito':
+                counterMosquito++;
+                break;
+            case 'decrease-janice':
+                counterJanice--;
+                break;
+            case 'decrease-mosquito':
+                counterMosquito--;
+                break;
+            case 'save':
+                localStorage.setItem('counterJanice', counterJanice);
+                localStorage.setItem('counterMosquito', counterMosquito);
+                console.log("Janice " + counterJanice + " mosquitoes " + counterMosquito);
+                break;
+            case 'clear':
+                localStorage.clear();
+                counterJanice = 0;
+                counterMosquito = 0;
+        }
 
-let saveElMosquito = document.getElementById("save-mosquito")
-function saveMosquito(){
-    let countMosquitoStr = countMosquito + " - "
-    saveElMosquito.textContent += countMosquitoStr
-    countMosquito = 0
-    countElMosquito.textContent = 0
-}
+        document.getElementById("counter-janice").textContent = counterJanice;
+        document.getElementById("counter-mosquito").textContent = counterMosquito;
+    });
+});

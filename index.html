@@ -5,27 +5,28 @@
     </head>
 
     <body>
-        <div class="max-width">
             <h1>Leaderboard</h1>
             <div id="container">
-                <div class="count-column">
+                <div>
                     <h2>Janice</h2>
-                    <h2 id="count-janice">0</h2>
-                    <button id="increment-btn" type="button" onclick="incrementJanice()">INCREMENT</button>
-                    <button id="save-btn" type="button" onclick="saveJanice()">SAVE</button>
-                    <p id="save-janice" class="wrap" class="saved-entries">Previous entries: </p>
+                    <h2 id="counter-janice">0</h2>
+                    <div class="counter-controls">
+                        <button data-action="increase-janice"><span>+</span></button>
+                        <button data-action="decrease-janice"><span>-</span></button>
+                    </div>
                 </div>
-        
-                <div class="count-column">
+                <div>
                     <h2>Mosquitoes</h2>
-                    <h2 id="count-mosquito">0</h2>
-                    <button id="increment-btn" type="button" onclick="incrementMosquito()">INCREMENT</button>
-                    <button id="save-btn" type="button" onclick="saveMosquito()">SAVE</button>
-                    <p id="save-mosquito" class="wrap" class="saved-entries">Previous entries: </p>
+                    <h2 id="counter-mosquito">0</h2>
+                    <div class="counter-controls">
+                        <button data-action="increase-mosquito"><span>+</span></button>
+                        <button data-action="decrease-mosquito"><span>-</span></button>
+                    </div>
                 </div>
-                <script src="index.js"></script>
             </div><!--container -->
-        </div>
+            <button data-action="save">save</button>
+            <button data-action="clear">clear </button>
+            <script src="index.js"></script>
     </body>
 
 </html>

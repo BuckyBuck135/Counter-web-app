@@ -5,11 +5,13 @@
 }
 
 body {
-    background: url(garden.jpg);
-    background-size: cover;
-    font-family:Oxygen, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-align: center;
-    font-weight: bold;
+  max-width: 300px;
+  margin: 0 auto;
+  background: url(garden.jpg);
+  background-size: cover;
+  font-family:Oxygen, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  font-weight: bold;
 }
 
 h1, h2, p {
@@ -27,11 +29,6 @@ h2 {
       font-size: 30px;
 }
 
-.max-width{
-  max-width: 300px;
-  margin: 0 auto;
-}
-
 #container {
   display: flex;
   justify-content: center;
@@ -39,11 +36,13 @@ h2 {
   max-width: 300px;
 }
 
-.count-column {
+.counter-controls {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
+  
 }
+
+/********** Button styling ***********/
 
 button {
     border: none;
@@ -51,42 +50,54 @@ button {
     color: white;
     font-weight: bold;
     font-size: large;
+    text-transform: uppercase;
     width: 200px;
     padding: 10px 40px;
     margin-bottom: 10px;    
-    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 
 button:active {
-  -webkit-transform: scale(0.98);
-  transform: scale(0.98);
+  transform: scale(1.1);
 }
 
-#increment-btn {
+button[data-action="increase-janice"], button[data-action="decrease-janice"], button[data-action="decrease-mosquito"], button[data-action="increase-mosquito"] {
     background: #8b0000;
 }
-#increment-btn:active {
+
+button[data-action="increase-janice"]:active, button[data-action="decrease-janice"]:active, button[data-action="decrease-mosquito"]:active, button[data-action="increase-mosquito"]:active {
   background: #720000;
 }
 
-#save-btn {
-    background: #006400;
+button[data-action="save"]{
+    background: #007e00;
+    margin-top: 20px;
 }
 
-#save-btn:active {
+button[data-action="save"]:active {
   background: #004b00;
 }
 
-.wrap {
-  width: 200px;
-  padding: 5px;
-  border: none;
-  border-radius: 10px;
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  line-height: 30px; 
-  background: rgba(0, 0, 0, 0.5);
-
+button[data-action="clear"] {
+  background: black;  
 }
+
+button[data-action="clear"]:hover {
+  background: white;
+  color: black;  
+}
+
+div.counter-controls button {
+  width: 50px;
+}
+
+button span {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+ 
