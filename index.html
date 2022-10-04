@@ -5,28 +5,56 @@
     </head>
 
     <body>
-            <h1>Leaderboard</h1>
+        <header>
+            <div class="player-input">
+                <form>
+                    <div class="remember-player1">
+                    <input id="entername-player1" type="text" placeholder="Player 1" required>
+                    <input data-action="submitname-player1" type="submit" value="Ready">
+                    </div>
+                    <div class="forget-player1">
+                        <p>Player 1 is ready</p>
+                    </div>
+                </form>
+                <form>
+                    <div class="remember-player2">
+                    <input id="entername-player2" type="text" placeholder="Player 2" required>
+                    <input data-action="submitname-player2" type="submit" value="Ready">
+                    </div>
+                    <div class="forget-player2">
+                        <p>Player 2 is ready</p>
+                    </div>
+                </form>
+            </div>
+        </header>
+        <main>
+            <h1>Gin Rummy</h1>
             <div id="container">
-                <div>
-                    <h2>Janice</h2>
-                    <h2 id="counter-janice">0</h2>
+                <div class="player-controls">
+                    <h2 id="name-player1">Player 1</h2>
+                    <h2 id="counter-player1">0</h2>
                     <div class="counter-controls">
-                        <button data-action="increase-janice"><span>+</span></button>
-                        <button data-action="decrease-janice"><span>-</span></button>
+                        <button data-action="increase-player1"><span>+1</span></button>
+                        <button data-action="increase-player1-10"><span>+10</span></button>
+                        <button data-action="decrease-player1"><span>-1</span></button>
                     </div>
                 </div>
-                <div>
-                    <h2>Mosquitoes</h2>
-                    <h2 id="counter-mosquito">0</h2>
+                <div class="player-controls">
+                    <h2 id="name-player2">Player 2</h2>
+                    <h2 id="counter-player2">0</h2>
                     <div class="counter-controls">
-                        <button data-action="increase-mosquito"><span>+</span></button>
-                        <button data-action="decrease-mosquito"><span>-</span></button>
+                        <button data-action="increase-player2"><span>+1</span></button>
+                        <button data-action="increase-player2-10"><span>+10</span></button>
+                        <button data-action="decrease-player2"><span>-1</span></button>
                     </div>
                 </div>
             </div><!--container -->
-            <button data-action="save">save</button>
-            <button data-action="clear">clear </button>
+            <div id="save-controls">
+                <button data-action="save">save</button>
+                <button data-action="clear">clear </button>
+            </div>
             <script src="index.js"></script>
+        </main>
     </body>
 
 </html>
