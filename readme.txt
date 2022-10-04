@@ -8,5 +8,6 @@ Bugs:
 Doesn't happen everytime.Increase a player, save. If increase10, then it increases as a string (i.e 10 (saved) + 10 = 1010, not the expected 20)
 
 How to improve the app:
-Not allowing empty input when clicking the "ready" button, resulting in an empty player name and a shift in layout.
-Implementing a "add player" feature.
+ - Responsiveness / mobile
+ - Not allowing empty input when clicking the "ready" button, resulting in an empty player name and a shift in layout.
+ - Implementing a "add player" feature.
